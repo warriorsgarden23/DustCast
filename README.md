@@ -1,6 +1,4 @@
-Here’s a draft `README.md` for your **DustCast** project. I’ve tailored it to capture what you’ve told me about the project (machine learning model forecasting dust storms, use of ERA5, MERRA-2, Sentinel-2, IOD teleconnections, H3 spatial aggregation, etc.). You can adjust the level of technical detail depending on whether the audience is collaborators, stakeholders, or open-source contributors.
 
----
 
 # DustCast
 
@@ -16,8 +14,8 @@ Dust storms are among the most significant environmental hazards in arid regions
 
 ## 📊 Key Features
 
-* **Data Integration:** Combines ERA5 reanalysis, MERRA-2 aerosol optical depth, Sentinel-2 land use/land cover, and Indian Ocean Dipole (IOD) teleconnection indices.
-* **Spatio-Temporal Scaling:** Uses the **H3 geospatial indexing system** (resolution 6) for consistent gridding and spatial analysis.
+* **Data Integration:** Combines ERA5 reanalysis, MERRA-2 aerosol optical depth,  and Indian Ocean Dipole (IOD) teleconnection indices.
+* **Spatio-Temporal Scaling:** Uses the **H3 geospatial indexing system** (resolution 4) for consistent gridding and spatial analysis.
 * **Machine Learning Forecasting:** Employs a **Random Forest model** with monthly lagged predictors to forecast dust storm conditions.
 * **Climate Change Sensitivity:** Evaluates how changes in land cover, climate teleconnections, and meteorological extremes influence dust storm trends.
 * **Data Schema Standardization:** Harmonized schema across datasets:
@@ -39,7 +37,6 @@ Dust storms are among the most significant environmental hazards in arid regions
 
 * **ERA5 Reanalysis (1980–2023)** – Meteorological reanalysis variables.
 * **MERRA-2 Aerosol Optical Depth (1980–2023)** – Aerosol assimilation data.
-* **Sentinel-2 Land Use/Land Cover (1985–2022)** – High-resolution LULC classifications.
 * **IOD Teleconnection Index (1800s–2023)** – Climate oscillation indicator.
 
 All datasets are preprocessed into **Parquet** files for efficient storage and analysis.
@@ -52,7 +49,6 @@ All datasets are preprocessed into **Parquet** files for efficient storage and a
 
    * ERA5 (hourly → monthly aggregation)
    * MERRA-2 (AOD hourly → monthly)
-   * Sentinel-2 (land cover code assignments)
    * Teleconnection indices alignment
 
 2. **Feature Engineering**
@@ -63,15 +59,15 @@ All datasets are preprocessed into **Parquet** files for efficient storage and a
 
 3. **Modeling**
 
-   * Random Forest algorithm
-   * Predictors: WX variables, AOD, land cover, teleconnections
+   * MLR, KNN, DT, RF algorithm
+   * Predictors: WX variables, AOD, teleconnections
    * Target: Dust storm frequency/intensity
 
 4. **Evaluation**
 
-   * Training period: 1993–2015
+   * Training period: 1980–2022
    * Testing/validation: 2016–2023
-   * Metrics: Accuracy, F1, variable importance
+   * Metrics: RMSE
 
 ---
 
@@ -148,9 +144,4 @@ If you use DustCast in your research, please cite:
 
 **Author:** Chris Ramos
 **Role:** Principal Data Scientist, Warriors Garden Solutions
-**Email:** \[[your.email@example.com](mailto:your.email@example.com)]
-
----
-
-Would you like me to make this README more **formal/academic** (like a research project description) or more **developer-focused** (step-by-step usage for collaborators on GitHub)?
-
+**Email:** Charlee.romeo23@gmail.com
