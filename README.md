@@ -20,16 +20,6 @@ Dust storms are among the most significant environmental hazards in arid regions
 * **Climate Change Sensitivity:** Evaluates how changes in land cover, climate teleconnections, and meteorological extremes influence dust storm trends.
 * **Data Schema Standardization:** Harmonized schema across datasets:
 
-  ```
-  Time (TIMESTAMPZ)
-  Latitude (Float)
-  Longitude (Float)
-  H3_Index (Int64)
-  Level (Int64)
-  WX_Variables (Float)
-  Merra2_Variables (Float)
-  Land_Cover_Code (Int8)
-  ```
 
 ---
 
@@ -65,8 +55,8 @@ All datasets are preprocessed into **Parquet** files for efficient storage and a
 
 4. **Evaluation**
 
-   * Training period: 1980–2022
-   * Testing/validation: 2016–2023
+   * Training/Validaiton period: 1980–2000, 2013-2022
+   * Testing: 2023
    * Metrics: RMSE
 
 ---
@@ -87,49 +77,33 @@ All datasets are preprocessed into **Parquet** files for efficient storage and a
 
 1. Clone the repository:
 
-   ```bash
    git clone https://github.com/<your-username>/dustcast.git
    cd dustcast
-   ```
+  
 2. Set up the environment:
 
-   ```bash
-   conda create -n dustcast python=3.9
-   conda activate dustcast
-   pip install -r requirements.txt
-   ```
 3. Preprocess datasets:
-
-   ```bash
-   python scripts/preprocess_data.py
-   ```
+  
 4. Train the model:
-
-   ```bash
-   python scripts/train_model.py
-   ```
+ 
 5. Generate forecasts:
-
-   ```bash
-   python scripts/forecast.py
-   ```
 
 ---
 
 ## 📈 Outputs
 
 * **Forecast Maps:** Predicted dust storm probabilities aggregated to H3 resolution.
-* **Feature Importance:** Ranking of meteorological, teleconnection, and land cover variables driving forecasts.
+* **Feature Importance:** Ranking of meteorological and teleconnection driving forecasts.
 * **Time-Series Analysis:** Dust storm trend comparisons across decades.
 
 ---
 
 ## 🔮 Applications
 
-* **Environmental Security** – Support for U.S. DoD & regional partners.
+* **Environmental Security** – Support for regional partners.
 * **Public Health** – Anticipating air quality impacts.
 * **Infrastructure & Transport** – Informing aviation, shipping, and logistics planning.
-* **Climate Research** – Linking SDS to climate variability and anthropogenic land-use changes.
+* **Climate Research** – Linking SDS to climate variability.
 
 ---
 
@@ -142,6 +116,6 @@ If you use DustCast in your research, please cite:
 
 ## 📧 Contact
 
-**Author:** Chris Ramos
-**Role:** Principal Data Scientist, Warriors Garden Solutions
+**Author:** Christopher Ramos
+**Role:** Data Scientist
 **Email:** Charlee.romeo23@gmail.com
